@@ -1,0 +1,238 @@
+/* public/index.css */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Reset Default Browser Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #2e2e2e; /* Match the background color from styles.css */
+    color: #f0f0f0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: #2e2e2e; /* Match the background color */
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+    border-bottom: 1px solid #1e1e1e;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: 600;
+    color: #f0f0f0;
+    text-decoration: none;
+}
+
+/* Join Container Styles */
+.join-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px; /* To avoid overlap with navbar */
+    text-align: center;
+    background: linear-gradient(145deg, #323232, #2a2a2a);
+}
+
+.join-container h1 {
+    margin-bottom: 20px;
+    font-size: 48px;
+    color: #f0f0f0;
+}
+
+.join-container p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    max-width: 600px;
+    color: #e0e0e0;
+    line-height: 1.5;
+}
+
+/* Decorative Image */
+.hero-image {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow:  20px 20px 60px #242424,
+                 -20px -20px 60px #383838;
+}
+
+/* Form Styles */
+.join-form .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.join-form input {
+    padding: 12px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px 0 0 8px;
+    width: 300px;
+    outline: none;
+    background: #2e2e2e;
+    color: #f0f0f0;
+    box-shadow: inset 3px 3px 6px #242424,
+                inset -3px -3px 6px #383838;
+}
+
+.join-form .btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    background: #2e2e2e;
+    color: #f0f0f0;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 4px 4px 8px #242424,
+                -4px -4px 8px #383838;
+}
+
+.join-form .btn:hover {
+    box-shadow: inset 4px 4px 8px #242424,
+                inset -4px -4px 8px #383838;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #e0e0e0;
+    margin: 20px 0;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.divider::before {
+    margin-right: 10px;
+}
+
+.divider::after {
+    margin-left: 10px;
+}
+
+/* Primary Button */
+.primary-btn {
+    background: #2e2e2e;
+    color: #f0f0f0;
+    box-shadow: 4px 4px 8px #242424,
+                -4px -4px 8px #383838;
+    margin-top: 10px;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: all 0.2s ease;
+}
+
+.primary-btn:hover {
+    box-shadow: inset 4px 4px 8px #242424,
+                inset -4px -4px 8px #383838;
+}
+
+/* Footer */
+.footer {
+    margin-top: 40px;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+    color: #e0e0e0;
+    font-size: 14px;
+    background-color: #2e2e2e;
+    border-top: 1px solid #1e1e1e;
+}
+
+.footer p {
+    margin-bottom: 5px;
+}
+
+.social-links a {
+    color: #f0f0f0;
+    margin: 0 10px;
+    font-size: 18px;
+    transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+    color: #ff6b6b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .join-container h1 {
+        font-size: 36px;
+    }
+
+    .join-container p {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+
+    .hero-image {
+        margin-bottom: 30px;
+    }
+
+    .join-form input {
+        width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .join-container h1 {
+        font-size: 28px;
+    }
+
+    .join-container p {
+        font-size: 14px;
+        padding: 0 15px;
+    }
+
+    .join-form input {
+        width: 200px;
+    }
+
+    .primary-btn {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+}

@@ -1,0 +1,67 @@
+<!-- public/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ArtCollab - Join or Create a Room</title>
+    <link rel="stylesheet" href="index.css">
+    <!-- Include Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">ArtCollab</a>
+    </nav>
+
+    <div class="join-container">
+        <h1>Welcome to ArtCollab</h1>
+        <p>Create or join a collaborative art room and start creating together!</p>
+
+        <!-- Decorative Image -->
+        <div class="hero-image">
+            <img src="art_collab_illustration.png" alt="Collaborative Art">
+        </div>
+
+        <form id="joinForm" class="join-form">
+            <div class="form-group">
+                <input type="text" id="roomInput" placeholder="Enter Room ID or Name" required>
+                <button type="submit" class="btn"><i class="fa fa-sign-in-alt"></i> Join Room</button>
+            </div>
+        </form>
+
+        <div class="divider">
+            <span>OR</span>
+        </div>
+
+        <button id="createRoomButton" class="btn primary-btn"><i class="fa fa-plus"></i> Create New Room</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2023 ArtCollab. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('joinForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const roomId = document.getElementById('roomInput').value.trim();
+            if (roomId) {
+                window.location.href = `canvas.html?room=${encodeURIComponent(roomId)}`;
+            }
+        });
+
+        document.getElementById('createRoomButton').addEventListener('click', function() {
+            // Generate a random 5-digit number as the room ID
+            const roomId = Math.floor(10000 + Math.random() * 90000).toString();
+            window.location.href = `canvas.html?room=${encodeURIComponent(roomId)}`;
+        });
+    </script>
+</body>
+</html>

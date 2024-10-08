@@ -1,0 +1,126 @@
+<!-- public/canvas.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>ArtCollab - Canvas</title>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Include Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a class="navbar-brand" href="index.html">ArtCollab</a>
+        <span class="navbar-text" id="roomIdDisplay">
+            Room ID: <span id="roomIdText"></span>
+        </span>
+    </nav>
+
+    <!-- Sidebar for Tools -->
+    <div id="sidebar">
+        <!-- Tool Buttons -->
+        <button id="penButton" class="tool-button active-tool" title="Pen">
+            <i class="fa fa-pen"></i>
+        </button>
+        <button id="eraserButton" class="tool-button" title="Eraser">
+            <i class="fa fa-eraser"></i>
+        </button>
+        <button id="lineButton" class="tool-button" title="Line">
+            <i class="fa fa-slash"></i>
+        </button>
+        <button id="rectangleButton" class="tool-button" title="Rectangle">
+            <i class="fa fa-square"></i>
+        </button>
+        <button id="circleButton" class="tool-button" title="Circle">
+            <i class="fa fa-circle"></i>
+        </button>
+        <button id="ellipseButton" class="tool-button" title="Ellipse">
+            <i class="fa fa-ellipsis-h"></i>
+        </button>
+        <button id="polygonButton" class="tool-button" title="Polygon">
+            <i class="fa fa-draw-polygon"></i>
+        </button>
+        <button id="gradientButton" class="tool-button" title="Gradient">
+            <i class="fa fa-paint-brush"></i>
+        </button>
+        <button id="markerButton" class="tool-button" title="Marker">
+            <i class="fa fa-marker"></i>
+        </button>
+        <button id="sprayButton" class="tool-button" title="Spray">
+            <i class="fa fa-spray-can"></i>
+        </button>
+        <button id="zoomInButton" class="tool-button" title="Zoom In">
+            <i class="fa fa-search-plus"></i>
+        </button>
+        <button id="zoomOutButton" class="tool-button" title="Zoom Out">
+            <i class="fa fa-search-minus"></i>
+        </button>
+        <button id="exportButton" class="tool-button" title="Export as PNG">
+            <i class="fa fa-download"></i>
+        </button>
+        <button id="clearButton" class="tool-button" title="Clear Canvas">
+            <i class="fa fa-trash"></i>
+        </button>
+        <button id="undoButton" class="tool-button" title="Undo">
+            <i class="fa fa-undo"></i>
+        </button>
+        <button id="redoButton" class="tool-button" title="Redo">
+            <i class="fa fa-redo"></i>
+        </button>
+    </div>
+
+    <!-- Top Toolbar for Options -->
+    <div id="top-toolbar">
+        <!-- Stroke Color Picker -->
+        <input
+          type="color"
+          id="colorPicker"
+          class="neu-input"
+          title="Choose Stroke Color"
+          value="#000000"
+        />
+        <!-- Fill Color Picker -->
+        <input
+          type="color"
+          id="fillColorPicker"
+          class="neu-input"
+          title="Choose Fill Color"
+          value="#ffffff"
+        />
+        <!-- Line Width Picker -->
+        <input
+          type="range"
+          id="lineWidthPicker"
+          class="neu-range"
+          min="1"
+          max="50"
+          value="2"
+          title="Line Width"
+        />
+        <!-- Gradient Palette -->
+        <select id="gradientPalette" class="neu-input" title="Choose Gradient">
+            <option value="">Select Gradient</option>
+            <option value="rainbow">Rainbow</option>
+            <option value="sunset">Sunset</option>
+            <option value="ocean">Ocean</option>
+            <option value="forest">Forest</option>
+            <option value="custom">Custom</option>
+        </select>
+    </div>
+
+    <!-- Canvas Container -->
+    <div id="canvas-container">
+        <!-- Removed fixed width and height attributes -->
+        <canvas id="canvas"></canvas>
+        <canvas id="tempCanvas"></canvas> <!-- Temporary canvas for live previews -->
+    </div>
+
+    <!-- Include Socket.IO -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- Include the Canvas Script -->
+    <script src="canvas.js"></script>
+</body>
+</html>
